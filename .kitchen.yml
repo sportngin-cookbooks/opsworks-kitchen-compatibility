@@ -125,7 +125,7 @@ suites:
       - recipe[opsworks_ganglia::client]
     attributes:
       opsworks:
-        ruby_version: 1.9.3
+        ruby_version: "1.9.3"
   - name: ruby-200
     run_list:
       - recipe[opsworks_initial_setup]
@@ -137,7 +137,7 @@ suites:
       - recipe[opsworks_ganglia::client]
     attributes:
       opsworks:
-        ruby_version: 2.0.0
+        ruby_version: "2.0.0"
   - name: ruby-21
     run_list:
       - recipe[opsworks_initial_setup]
@@ -149,4 +149,5 @@ suites:
       - recipe[opsworks_ganglia::client]
     attributes:
       opsworks:
-        ruby_version: 2.1
+        ruby_version: "2.1"
+
