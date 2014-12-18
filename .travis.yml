@@ -6,7 +6,7 @@ env:
   - secure: iMGUyWCHIoRoOUFNlgugvhnIm2fX6jJO7Qg97Bk3616cHTX+gh64fYiEEIAKrOB69U6F25fpetDBMwhw2WX8WnyAHbkUhW6ySItBx8KhrgVEk2hN88nOM5iped+LNrejjM6cWRyZHV/UmoJu4Ha6P1qicCfOP4Dp8Viggi+VxN4=
 before_install:
 - openssl aes-256-cbc -K $encrypted_1f4c965b8c54_key -iv $encrypted_1f4c965b8c54_iv
-  -in id_rsa_kitchen_ec2.enc -out ~\/.ssh/id_rsa_kitchen_ec2 -d
+  -in id_rsa_kitchen_ec2.enc -out id_rsa_kitchen_ec2 -d
 - chmod 600 id_rsa_kitchen_ec2
 script: bundle exec kitchen test -d always
 language: ruby
