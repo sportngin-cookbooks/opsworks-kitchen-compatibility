@@ -14,11 +14,8 @@ driver:
 provisioner:
   name: chef_zero
   environments_path: ./test/environments
-  attributes:
-    test_kitchen: true
-    opsworks:
-      instance:
-        infrastructure_class: ec2
+  environment: test-stack
+
 platforms:
   - name: ec2
     driver_plugin: ec2
@@ -35,10 +32,10 @@ platforms:
         Name: <%= "#{ENV['CI'] ? 'travis-ci' : ENV['USER']}-opsworks-kitchen-compatibility" %>
         Env: public
 suites:
-  - name: default
+  - name: ruby-193
     provisioner:
       client_rb:
-        environment: test-stack
+        environment: stack
     run_list:
       - recipe[opsworks_initial_setup]
       - recipe[ssh_host_keys]
@@ -48,3 +45,35 @@ suites:
       - recipe[ebs]
       - recipe[opsworks_ganglia::client]
     attributes:
+      opsworks:
+        ruby_version: 1.9.3
+  - name: ruby-200
+    provisioner:
+      client_rb:
+        environment: stack
+    run_list:
+      - recipe[opsworks_initial_setup]
+      - recipe[ssh_host_keys]
+      - recipe[ssh_users]
+      - recipe[mysql::client]
+      - recipe[dependencies]
+      - recipe[ebs]
+      - recipe[opsworks_ganglia::client]
+    attributes:
+      opsworks:
+        ruby_version: 2.0.0
+  - name: ruby-21
+    provisioner:
+      client_rb:
+        environment: stack
+    run_list:
+      - recipe[opsworks_initial_setup]
+      - recipe[ssh_host_keys]
+      - recipe[ssh_users]
+      - recipe[mysql::client]
+      - recipe[dependencies]
+      - recipe[ebs]
+      - recipe[opsworks_ganglia::client]
+    attributes:
+      opsworks:
+        ruby_version: 2.1
