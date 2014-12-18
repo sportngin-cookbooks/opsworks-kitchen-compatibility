@@ -1,6 +1,6 @@
 # opsworks-kitchen-compatibility cookbook
 
-[![Build Status](https://travis-ci.org/sportngin-cookbooks/opsworks-kitchen-compatibility.svg)](https://travis-ci.org/sportngin-cookbooks/opsworks-kitchen-compatibility)
+[![Build Status](https://travis-ci.org/sportngin-cookbooks/opsworks-kitchen-compatibility.svg?branch=chef-11.4)](https://travis-ci.org/sportngin-cookbooks/opsworks-kitchen-compatibility)
 
 Executes AWS OpsWorks built-in cookbooks to test compatibility with test kitchen using kitchen-ec2.
 
