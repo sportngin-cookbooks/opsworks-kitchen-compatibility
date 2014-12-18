@@ -1,17 +1,87 @@
 {
-  "deploy": {
-  },
-  "ssh_users": {},
+  "recipes": [
+    "opsworks_custom_cookbooks::load",
+    "opsworks_custom_cookbooks::execute"
+  ],
   "opsworks_rubygems": {
     "version": "2.2.2"
   },
-  "opsworks_bundler": {
-    "version": "1.5.3",
-    "manage_package": null
+  "ssh_users": {},
+  "deploy": {},
+  "opsworks_custom_cookbooks": {
+    "recipes": [
+      "opsworks_stack_state_sync",
+      "agent_version",
+      "test_suite",
+      "opsworks_cleanup"
+    ],
+    "enabled": false
+  },
+  "opsworks_commons": {
+    "assets_url": "https://opsworks-instance-assets-us-east-1.s3.amazonaws.com"
   },
   "opsworks": {
-    "agent_version": "33300020141216163306",
+    "ruby_stack": "ruby",
+    "rails_stack": {
+      "name": null
+    },
+    "instance": {
+      "subnet_id": "subnet-foobar",
+      "hostname": "test",
+      "region": "us-east-1",
+      "backends": 4,
+      "availability_zone": "us-east-1b",
+      "layers": [
+        "test"
+      ],
+      "architecture": "x86_64",
+      "aws_instance_id": "i-foobar",
+      "ip": "127.0.0.1",
+      "id": "3b312fbf-0815-4930-b2e0-2dbf9cd6df1b",
+      "private_ip": "127.0.0.1",
+      "public_dns_name": "127.0.0.1",
+      "infrastructure_class": "ec2",
+      "private_dns_name": "127.0.0.1",
+      "instance_type": "c3.large"
+    },
+    "deployment": "350443ad-d60d-4f3b-bb18-6fd61bdd18ac",
+    "applications": [
+      {
+        "application_type": "other",
+        "slug_name": "blank",
+        "name": "Blank"
+      }
+    ],
+    "layers": {
+      "test": {
+        "instances": {
+          "test": {
+            "region": "us-east-1",
+            "status": "online",
+            "backends": 4,
+            "availability_zone": "us-east-1b",
+            "created_at": "2014-12-08T17:21:24+00:00",
+            "aws_instance_id": "i-foobar",
+            "id": "3b312fbf-0815-4930-b2e0-2dbf9cd6df1b",
+            "ip": "127.0.0.1",
+            "booted_at": "2014-12-10T17:20:14+00:00",
+            "private_ip": "127.0.0.1",
+            "public_dns_name": "127.0.0.1",
+            "infrastructure_class": "ec2",
+            "private_dns_name": "127.0.0.1",
+            "instance_type": "c3.large"
+          }
+        },
+        "elb-load-balancers": [
+
+        ],
+        "id": "68e1ca2a-ac81-45ac-b709-a530ffbce43b",
+        "name": "Test"
+      }
+    },
     "activity": "execute_recipes",
+    "sent_at": 1418640326,
+    "ruby_version": "2.0",
     "valid_client_activities": [
       "reboot",
       "stop",
@@ -23,90 +93,21 @@
       "update_custom_cookbooks",
       "execute_recipes"
     ],
-    "sent_at": 1418924612,
-    "deployment": "f14b3f61-4feb-47bd-9f28-828911841b71",
-    "layers": {
-      "foo": {
-        "name": "foo",
-        "id": "35e86b84-6f42-442c-8727-198fe1b03670",
-        "elb-load-balancers": [
-
-        ],
-        "instances": {
-          "foo1": {
-            "public_dns_name": "ec2-54-175-39-31.compute-1.amazonaws.com",
-            "private_dns_name": "ip-10-0-2-159.ec2.internal",
-            "backends": 8,
-            "ip": "54.175.39.31",
-            "private_ip": "10.0.2.159",
-            "instance_type": "c3.large",
-            "status": "online",
-            "id": "bee7ca44-e8d9-4d27-8e92-cddacdddf95d",
-            "aws_instance_id": "i-f179e40f",
-            "elastic_ip": null,
-            "created_at": "2014-12-18T17:37:56+00:00",
-            "booted_at": "2014-12-18T17:38:50+00:00",
-            "region": "us-east-1",
-            "availability_zone": "us-east-1b",
-            "infrastructure_class": "ec2"
-          }
-        }
-      }
-    },
-    "applications": [
-
-    ],
+    "agent_version": "23700020141208123225",
     "stack": {
-      "name": "test",
-      "id": "e5dcd258-3af7-4f88-9ae3-84bd9bd924d9",
-      "vpc_id": "vpc-foobar",
       "elb-load-balancers": [
 
       ],
       "rds_instances": [
 
-      ]
-    },
-    "instance": {
-      "id": "bee7ca44-e8d9-4d27-8e92-cddacdddf95d",
-      "hostname": "foo1",
-      "instance_type": "c3.large",
-      "public_dns_name": "127.0.0.1",
-      "private_dns_name": "127.0.0.1",
-      "ip": "127.0.0.1",
-      "private_ip": "127.0.0.1",
-      "architecture": "x86_64",
-      "layers": [
-        "foo"
       ],
-      "backends": 8,
-      "aws_instance_id": "i-foobar",
-      "region": "us-east-1",
-      "availability_zone": "us-east-1b",
-      "subnet_id": "subnet-foobar",
-      "infrastructure_class": "ec2"
-    },
-    "ruby_version": "2.0.0",
-    "ruby_stack": "ruby",
-    "rails_stack": {
-      "name": null
+      "id": "d951442f-e824-498e-8bd3-c9fe77d3dc5c",
+      "vpc_id": "vpc-foobar",
+      "name": "test"
     }
   },
-  "opsworks_custom_cookbooks": {
-    "enabled": false,
-    "recipes": [
-      "opsworks_stack_state_sync",
-      "ssh_users",
-      "test_suite",
-      "opsworks_cleanup"
-    ]
-  },
-  "chef_environment": "_default",
-  "recipes": [
-    "opsworks_custom_cookbooks::load",
-    "opsworks_custom_cookbooks::execute"
-  ],
-  "opsworks_commons": {
-    "assets_url": "https://opsworks-instance-assets-us-east-1.s3.amazonaws.com"
+  "opsworks_bundler": {
+    "manage_package": null,
+    "version": "1.5.3"
   }
 }
