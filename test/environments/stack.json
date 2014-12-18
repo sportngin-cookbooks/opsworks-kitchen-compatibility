@@ -28,22 +28,22 @@
       "sent_at": 1418924612,
       "deployment": "f14b3f61-4feb-47bd-9f28-828911841b71",
       "layers": {
-        "foo": {
-          "name": "foo",
+        "test": {
+          "name": "test",
           "id": "35e86b84-6f42-442c-8727-198fe1b03670",
           "elb-load-balancers": [
           ],
           "instances": {
-            "foo1": {
-              "public_dns_name": "ec2-54-175-39-31.compute-1.amazonaws.com",
-              "private_dns_name": "ip-10-0-2-159.ec2.internal",
+            "test1": {
+              "public_dns_name": "127.0.0.1",
+              "private_dns_name": "127.0.0.1",
               "backends": 8,
-              "ip": "54.175.39.31",
-              "private_ip": "10.0.2.159",
+              "ip": "127.0.0.1",
+              "private_ip": "127.0.0.1",
               "instance_type": "c3.large",
               "status": "online",
-              "id": "bee7ca44-e8d9-4d27-8e92-cddacdddf95d",
-              "aws_instance_id": "i-f179e40f",
+              "id": "bee7ca44-e8d9-4d27-8e92-cddacdddf95c",
+              "aws_instance_id": "i-foobar",
               "elastic_ip": null,
               "created_at": "2014-12-18T17:37:56+00:00",
               "booted_at": "2014-12-18T17:38:50+00:00",
@@ -58,7 +58,7 @@
       ],
       "stack": {
         "name": "test",
-        "id": "e5dcd258-3af7-4f88-9ae3-84bd9bd924d9",
+        "id": "e5dcd258-3af7-4f88-9ae3-84bd9bd924d8",
         "vpc_id": "vpc-foobar",
         "elb-load-balancers": [
         ],
@@ -66,8 +66,8 @@
         ]
       },
       "instance": {
-        "id": "bee7ca44-e8d9-4d27-8e92-cddacdddf95d",
-        "hostname": "foo1",
+        "id": "bee7ca44-e8d9-4d27-8e92-cddacdddf95c",
+        "hostname": "test1",
         "instance_type": "c3.large",
         "public_dns_name": "127.0.0.1",
         "private_dns_name": "127.0.0.1",
